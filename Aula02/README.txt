@@ -8,3 +8,4 @@ Conteúdo trabalhado:
     Criar uma descrição a partir de um fluxograma;
 - Expressões Lógicas;
 - Tabela verdade;
+- Abstração (conceitos)
