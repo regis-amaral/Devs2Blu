@@ -21,6 +21,9 @@ public class Array {
             System.out.println("5 - Calcula a soma de todos os 4 elementos de um array de numeros reais");
             System.out.println("6 - Cria um array de inteiros com 5 entradas do usuário e imprime o maior entre eles");
             System.out.println("7 - Imprime todas as vogais encontradas no texto fornecido pelo usuário");
+            System.out.println("8 - ");
+            System.out.println("9 - ");
+            System.out.println("10 - ");
             System.out.println("x - Sair");
             System.out.println("#########################################");
             String opcao = scanner.nextLine().replaceAll("\\s+", " ").trim();
@@ -32,6 +35,9 @@ public class Array {
                 case "5": questaoCinco(); break;
                 case "6": questaoSeis(); break;
                 case "7": questaoSete(); break;
+                case "8": questaoOito(); break;
+                case "9": questaoNove(); break;
+                case "10": questaoDez(); break;
                 case "x": exec = false; continue;
                 default:
                     System.out.println("Opção inválida!");
@@ -109,15 +115,17 @@ public class Array {
     }
 
     private static void questaoDez(){
-        double[] numeros = new double[5];
         try{
-            for (int i = 0; i < numeros.length; i++){
-                System.out.println("Digite um valor para a posição " + (i + 1));
+            System.out.println("Informe o tamanho do array desejado:");
+            int tamanho = scanner.nextInt();
+            double[] numeros = new double[tamanho];
+            for(int i = 0; i < tamanho; i++){
+                System.out.println("Digite um número real para a posição " + (i + 1));
                 numeros[i] = scanner.nextDouble();
             }
-            System.out.println(Arrays.toString(numeros));
+            System.out.println("Array: " + Arrays.toString(numeros));
             Arrays.sort(numeros);
-            System.out.println("O maior número é " + numeros[numeros.length-1]);
+            System.out.println("O segundo maior número é " + numeros[numeros.length-2]);
         }catch (InputMismatchException | NumberFormatException e) {
             System.out.println("Você não inseriu uma entrada válida!");
         }
