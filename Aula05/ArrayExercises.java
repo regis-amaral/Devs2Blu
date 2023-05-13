@@ -1,3 +1,5 @@
+package Aula05;
+
 import java.util.*;
 
 public class ArrayExercises {
