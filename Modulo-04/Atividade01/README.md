@@ -10,3 +10,7 @@ Etapas para resolução dessa atividade:
 2. Identifique quais são os campos que devemos ter em cada uma das entidades;
 3. Identifique o melhor tipo de dados para cada um dos campos elencados;
 4. Faça o MER das informações acima elencadas;
+
+## Artefatos
+
+[MER Clínica Médica](https://github.com/regis-amaral/Devs2Blu/blob/main/Modulo-04/Atividade01/MER_Clinica_M%C3%A9dica-Regis_Amaral.png)
