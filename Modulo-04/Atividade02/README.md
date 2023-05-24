@@ -9,3 +9,9 @@ Etapas para resolução dessa atividade:
 3. Identifique os campos que devem conter o operador de PRIMARY KEY
 4. Identifique os campos que devem contas o operador de FOREIGN KEY
 5. Faça as alterações necessárias tanto nos campos elencados como no MER
+
+### Artefatos
+
+[Clinica.sql](https://github.com/regis-amaral/Devs2Blu/blob/main/Modulo-04/Atividade02/Clinica.sql)
+
+[MER após a criação utilizando o DBeaver](https://github.com/regis-amaral/Devs2Blu/blob/main/Modulo-04/Atividade02/clinica%20-%20public.png)
