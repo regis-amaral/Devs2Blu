@@ -10,7 +10,7 @@ CREATE TABLE public.pessoa (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
 
 CREATE TABLE public.paciente (
@@ -26,7 +26,7 @@ CREATE TABLE public.paciente (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
 
 CREATE TABLE public.medico (
@@ -37,7 +37,7 @@ CREATE TABLE public.medico (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
 
 CREATE TABLE public.enfermeiro (
@@ -48,7 +48,7 @@ CREATE TABLE public.enfermeiro (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
 
 CREATE TABLE public.agendamento (
@@ -61,7 +61,7 @@ CREATE TABLE public.agendamento (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
 
 CREATE TABLE public.prontuario (
@@ -75,5 +75,5 @@ CREATE TABLE public.prontuario (
 	criado_em timestamp not null,
 	criado_por varchar(255) not null,
 	modificado_em timestamp not null,
-	modificado_por varchar(255) not null,
+	modificado_por varchar(255) not null
 );
