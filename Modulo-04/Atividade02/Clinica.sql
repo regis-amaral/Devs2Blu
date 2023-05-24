@@ -6,7 +6,11 @@ CREATE TABLE public.pessoa (
 	data_cadastro timestamp not null, 
 	endereco varchar(255), 
 	telefone char(14),
-	email varchar(100)
+	email varchar(100),
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
 
 CREATE TABLE public.paciente (
@@ -18,21 +22,33 @@ CREATE TABLE public.paciente (
 	limitacao varchar(255), 
 	alergia varchar(255), 
 	convenio varchar(255), 
-	observacoes varchar(55)
+	observacoes varchar(55),
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
 
 CREATE TABLE public.medico (
 	id serial primary key, 
 	pessoa_id integer references public.pessoa(id), 
 	crm char(10) unique, 
-	especialidade varchar(20)
+	especialidade varchar(20),
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
 
 CREATE TABLE public.enfermeiro (
 	id serial primary key, 
 	pessoa_id integer references public.pessoa(id), 
 	coren char(10) unique,
-	data_entrada date not null
+	data_entrada date not null,
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
 
 CREATE TABLE public.agendamento (
@@ -41,7 +57,11 @@ CREATE TABLE public.agendamento (
 	enfermeiro_id integer references public.enfermeiro(id),
 	medico_id integer references public.medico(id), 
 	data timestamp not null, 
-	observacoes varchar(255)
+	observacoes varchar(255),
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
 
 CREATE TABLE public.prontuario (
@@ -51,9 +71,9 @@ CREATE TABLE public.prontuario (
 	data timestamp not null, 
 	exames_solicitados varchar(255), 
 	diagnosticos varchar(255), 
-	encaminhamentos varchar(255)
+	encaminhamentos varchar(255),
+	criado_em timestamp not null,
+	criado_por varchar(255) not null,
+	modificado_em timestamp not null,
+	modificado_por varchar(255) not null,
 );
-
-
-
-
