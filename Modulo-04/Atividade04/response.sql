@@ -20,13 +20,19 @@ SELECT nome, precovenda FROM produto WHERE precovenda IS NOT NULL;
 SELECT nome, telefone FROM pessoa WHERE ativo IS TRUE AND telefone IS NOT null;
 
 -- 8. Obtenha o nome e o valor total de todos os produtos da tabela "comandaProduto".
+SELECT produto.nome, comandaproduto.valortotal FROM comandaproduto INNER JOIN produto ON produto.id = comandaproduto.produtoid;
 
 -- 9. Listar todas as comandas com valor maior ou igual de 50 reais;
+SELECT * FROM comandaproduto c WHERE c.valortotal >= 50;
 
 -- 10. Listar os produtos com valor abaixo dos 10 reais;
+SELECT * FROM produto p WHERE p.precovenda < 10;
 
 -- 11. Selecione o nome e o código de todas as mesas da tabela "mesa" que estão associadas a um atendente específico (por exemplo, atendenteId = 1);
+SELECT m.nome, m.codigo FROM mesa m WHERE m.atendenteid = 1;
 
 -- 12. As comandas que tenham valor entre 30 e 50 reais;
+SELECT * FROM comanda c WHERE c.valor BETWEEN 30 AND 50;
 
 -- 13. Selecione o código das mesas que foram atendidas pela atendete Fernanda Oliveira (por exemplo, atendenteId = 1);
+SELECT m.codigo FROM mesa m INNER JOIN pessoa p ON p.id = m.atendenteid WHERE p.id = 1;
