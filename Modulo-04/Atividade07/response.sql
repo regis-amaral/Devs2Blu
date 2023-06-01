@@ -9,11 +9,14 @@ SELECT c.comandaid AS "ComandaId", max(c.quantidade) AS "Maior Quantidade de Pro
 --4. Liste as mesas que possuem mais de 5 pessoas - HAVING;
 SELECT * FROM mesa m GROUP BY m.id HAVING m.quantidademaximapessoas > 5;
 --5. Agrupe os produtos pelo preço de venda e liste os produtos com preço de venda maior que 10;
-SELECT p.nome, max(p.precovenda) AS "maximo" FROM produto p GROUP BY p.nome HAVING max(p.precovenda) > 10;
+SELECT max(p.precovenda) AS "Produtos > 10" FROM produto p GROUP BY p.precovenda HAVING max(p.precovenda) > 10;
 --6. Encontre a quantidade média de produtos vendidos por comanda e liste apenas as comandas que possuem uma quantidade média superior a 3;
 SELECT avg(c.quantidade) AS "Media de produtos por comanda" FROM comandaproduto c GROUP BY c.comandaid HAVING avg(c.quantidade) > 2;
 --7. Agrupe os produtos pela descrição e liste apenas aqueles que possuem mais de 5 registros;
-SELECT p.descricao FROM produto p GROUP BY p.descricao;
+
+SELECT p.descricao FROM produto p GROUP BY p.descricao HAVING p.;
+
 --8. Liste as mesas com o número máximo de pessoas e ordene-as em ordem decrescente pela quantidade máxima de pessoas;
 SELECT m.codigo, max(m.quantidademaximapessoas) FROM mesa m GROUP BY m.quantidademaximapessoas, m.codigo ORDER BY m.quantidademaximapessoas DESC;
 --9. Agrupe as comandas por cliente e liste apenas os clientes que possuem mais de 3 comandas;
+SELECT c.clienteid, count(c.id) FROM comanda c GROUP BY c.clienteid HAVING count(c.id) >= 2; --na base atual nenhum tem mais DO que 2 comandas
