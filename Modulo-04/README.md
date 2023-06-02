@@ -1,4 +1,4 @@
-### Banco de Dados Relacional com PostgreSQL 
+### [Banco de Dados Relacional com PostgreSQL](https://marciomichelluzzi.notion.site/Bancos-de-Dados-Relacionais-afbb6b91dac148478f2305da811ddc0f)
 - [Definição, Evolução, Modelagem de bancos de dados relacionais](https://marciomichelluzzi.notion.site/Defini-o-Evolu-o-Modelagem-de-bancos-de-dados-relacionais-4270d38f8738413ca043a01f2ea463a2)
 - [Tipos de Dados e Operadores PostgreSQL](https://marciomichelluzzi.notion.site/Tipos-de-Dados-e-Operadores-PostgreSQL-02421258aee141058e5762493799e731)
 - [Postgres Data Types](https://www.postgresql.org/docs/current/datatype.html)
