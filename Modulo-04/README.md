@@ -4,3 +4,4 @@
 - [Postgres Data Types](https://www.postgresql.org/docs/current/datatype.html)
 - [Comandos DDL (Data Definition Language) PostgreSQL](https://marciomichelluzzi.notion.site/Comandos-DDL-Data-Definition-Language-PostgreSQL-38c5451801de4d62ad29b34106f3c85b)
 - [Comandos DML (Data Manipulation Language) PostgreSQL](https://marciomichelluzzi.notion.site/Comandos-DML-Data-Manipulation-Language-PostgreSQL-d22ed7354ed14775b2e5ec9e0aea3e2f)
+- [Comandos DQL - Recursos avançados](https://marciomichelluzzi.notion.site/Comandos-DQL-Recursos-avan-ados-1caa3cbe8c77430dbbd812b77053e720)
