@@ -17,7 +17,6 @@ SELECT * FROM comanda ORDER BY valor DESC LIMIT 1;
 -- 8. As 3 comandas com maior valor (baseado campo valor da tabela “comanda”) ordenadas em ordem crescente
 SELECT * from comanda ORDER BY valor DESC LIMIT 3;
 -- 9. Atualizar a tabela de pessoa para adicionar valores nos campos de data de nascimento
-
 -- 10. Os clientes que são aniversariantes do mês
 -- 11. O código das mesas que onde não possuem atendentes alocados
 -- 12. A quantidade de atendentes que existem cadastrados
