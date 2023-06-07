@@ -17,11 +17,35 @@ SELECT * FROM comanda ORDER BY valor DESC LIMIT 1;
 -- 8. As 3 comandas com maior valor (baseado campo valor da tabela “comanda”) ordenadas em ordem crescente
 SELECT * from comanda ORDER BY valor DESC LIMIT 3;
 -- 9. Atualizar a tabela de pessoa para adicionar valores nos campos de data de nascimento
+
+CREATE OR REPLACE FUNCTION gerar_data_aleatoria(start_date date, end_date date)
+RETURNS date AS $$
+BEGIN
+    RETURN start_date + (random() * (end_date - start_date + 1))::integer;
+END;
+$$ LANGUAGE plpgsql;
+
+UPDATE pessoa
+SET datanascimento = gerar_data_aleatoria(DATE '1970-01-01', DATE '2010-12-31')
+WHERE datanascimento IS NULL;
+
+SELECT * FROM pessoa WHERE datanascimento IS NULL;
+
 -- 10. Os clientes que são aniversariantes do mês
+SELECT * FROM pessoa
+WHERE EXTRACT(MONTH FROM datanascimento) = EXTRACT(MONTH FROM CURRENT_DATE);
 -- 11. O código das mesas que onde não possuem atendentes alocados
+SELECT * FROM mesa LEFT JOIN pessoa ON pessoa.id = mesa.atendenteid WHERE pessoa.id IS NULL;
+-- ou
+SELECT * FROM mesa WHERE atendenteid IS NULL;
 -- 12. A quantidade de atendentes que existem cadastrados
+SELECT count(DISTINCT mesa.atendenteid) AS "Qtd de Atendentes" FROM mesa JOIN pessoa ON pessoa.id = mesa.atendenteid;
 -- 13. A quantidade de comandas dos dois últimos anos (baseados na data e hoje) 
+SELECT * FROM comanda WHERE criadoem BETWEEN NOW() - INTERVAL '2 years' AND NOW(); 
 -- 14. O maior valor de comanda (baseado campo valor da tabela “comanda”) dia a dia do mês atual
+SELECT codigo, max(valor), criadoem FROM comanda GROUP BY criadoem, codigo, criadoem;
+
+
 -- 15. O valor de cada comanda (baseado na soma dos valores dos produtos da comanda) juntamente com valor do item mais caro que compõe a comanda 
 -- 16. O valor que cada cliente já gastou no restaurante 
 -- 17. A lista de códigos das mesas juntamente com o nome dos atendentes responsáveis por cada mesa (apenas as mesas que contém atendente)
@@ -41,3 +65,5 @@ SELECT * from comanda ORDER BY valor DESC LIMIT 3;
 -- 31. O valor da comanda com maior valor e com menor valor (baseado campo valor da tabela “comanda”)
 -- 32. Os produtos que nunca saíram em nenhuma comanda 
 -- 33. A quantidade de vezes que um produto saiu em cada comanda
+
+
