@@ -55,7 +55,9 @@ SELECT p.nome, sum(c.valor) FROM comanda c JOIN pessoa p ON p.id = c.clienteid G
 -- 17. A lista de códigos das mesas juntamente com o nome dos atendentes responsáveis por cada mesa (apenas as mesas que contém atendente)
 SELECT m.codigo as "Código da Mesa", p.nome as "Atendente" FROM mesa m JOIN pessoa p ON p.id = m.atendenteid;
 -- 18. A lista das comandas com seus produtos mostrando o código da comanda e o nome do produto
-SELECT c.codigo, p.nome FROM comanda c JOIN comandaproduto cp on cp.comandaid = c.id JOIN produto p ON p.id = cp.produtoid ORDER BY c.codigo;
+SELECT c.codigo, p.nome FROM comanda c 
+JOIN comandaproduto cp on cp.comandaid = c.id 
+JOIN produto p ON p.id = cp.produtoid ORDER BY c.codigo;
 -- 19. Os valores totais de cada comanda (baseado na soma dos itens da tabela “comandaProduto”)
 SELECT c.codigo as "Comanda", SUM(cp.quantidade * cp.valortotal) as "Valor Total" FROM comandaproduto cp
 JOIN comanda c on c.id = cp.comandaid
@@ -68,7 +70,7 @@ GROUP BY c.codigo, p.nome
 ORDER BY maiorvalor DESC
 LIMIT 1
 -- 21. A quantidade de clientes em cada dia
-
+SELECT c.criadoem AS "Dia", sum(m.quantidademaximapessoas) AS "Quantidade Clientes" FROM comanda c JOIN mesa m ON c.mesaid = m.id GROUP BY c.criadoem;
 -- 22. O funcionário mais velho que já fez algum atendimento
 
 -- 23. A comanda com maior valor (baseado na soma dos itens da tabela “comandaProduto”) e que não está paga
