@@ -1,6 +1,10 @@
 package aula01;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         Girafa girafales = new Girafa();
         girafales.setAltura(10.0);
@@ -16,6 +20,19 @@ public class App {
         melman.setQuantidadespatas(4);
         melman.setVelocidade(21.0);
 
-        System.out.println("Olá, mundo!");
+        Pista pista1 = new Pista();
+        pista1.setNome("Interlagos");
+        pista1.setComprimento(2.5f);
+
+        List<Girafa> competidores = new ArrayList<Girafa>();
+        competidores.add(melman);
+        competidores.add(girafales);
+        
+        Corrida corrida = new Corrida();
+        corrida.setQuantidadeVoltas((byte) 2);
+        corrida.setPista(pista1);
+        corrida.setCompetidores(competidores);
+
+        corrida.iniciarCorrida();
     }
 }
