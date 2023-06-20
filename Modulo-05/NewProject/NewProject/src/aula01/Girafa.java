@@ -1,66 +1,57 @@
 package aula01;
-public class Girafa {
-    private double altura;
-    private double peso;
-    private double velocidade;
-    private int quantidadespatas;
-    private String codigo;
 
-    public Girafa(){
-        System.out.println("Objeto Girafa criado");    
-    }
+public class Girafa extends Animal {
 
-    public void correr() {
-        System.out.println("Girafa correndo");
-    }
+	private double velocidade;
+	private int energia;
+	private int quantidadePatas;
 
-    public void andar() {
-        System.out.println("Girafa andando");
-    }
+	// Método CONSTRUTOR
+	public Girafa(float altura) {
+		this.energia = 10;
+		super.setAltura(altura);
+		System.out.println("Girafa criada com a altura ");
+	}
 
-    public double calcularVelocidade() {
-        return 0;
-    }
+	public Girafa() {
+		System.out.println("Girafa criada");
+	}
 
-    public double getAltura() {
-        return altura;
-    }
+	@Override
+	public void correr() {
+		System.out.println("Girafa " + super.getNome() + " correndo");
+	}
 
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
+	public void andar() {
+		System.out.println("Girafa " + super.getNome() + " andando");
+	}
 
-    public double getPeso() {
-        return peso;
-    }
+	public double calcularVelocidade() {
+		this.velocidade = ((energia * super.getPeso()) / quantidadePatas) / 50;
+		return velocidade;
+	}
 
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
+	public double getVelocidade() {
+		return velocidade;
+	}
 
-    public double getVelocidade() {
-        return velocidade;
-    }
+	public void setVelocidade(double velocidade) {
+		this.velocidade = velocidade;
+	}
 
-    public void setVelocidade(double velocidade) {
-        this.velocidade = velocidade;
-    }
+	public int getEnergia() {
+		return energia;
+	}
 
-    public int getQuantidadespatas() {
-        return quantidadespatas;
-    }
+	public void setEnergia(int energia) {
+		this.energia = energia;
+	}
 
-    public void setQuantidadespatas(int quantidadespatas) {
-        this.quantidadespatas = quantidadespatas;
-    }
+	public int getQuantidadePatas() {
+		return quantidadePatas;
+	}
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    
+	public void setQuantidadePatas(int quantidadePatas) {
+		this.quantidadePatas = quantidadePatas;
+	}
 }
