@@ -3,6 +3,7 @@ package Views;
 import java.util.Scanner;
 
 import Controllers.ClienteController;
+import Models.Cliente;
 
 public class CadastroCliente extends View {
 
@@ -25,5 +26,19 @@ public class CadastroCliente extends View {
     private static void cadastrar(){
         ClienteController clienteControler = new ClienteController();
         
+        try{
+            System.out.println("Informe o nome:");
+            String nome = scanner.nextLine();
+            System.out.println("Informe o telefone:");
+            String telefone = scanner.nextLine();
+            System.out.println("Informe o CPF:");
+            String cpf = scanner.nextLine();
+            Cliente cliente = new Cliente(nome, telefone, cpf);
+
+
+        }catch(Exception e){
+            System.out.println("Dado informado inválido!\nCadastro não finalizado...");
+        }
+
     }
 }

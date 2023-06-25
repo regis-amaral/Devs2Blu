@@ -10,11 +10,11 @@ public class Cliente extends Pessoa {
     private Date alteradoEm;
     private Funcionario alteradoPor;
 
-    public Cliente(String nome, char telefone, char cpf) {
+    public Cliente(String nome, String telefone, String cpf) {
         super(nome, telefone, cpf);
     }
 
-    public Cliente(String nome, char telefone, char cpf, String observacao, boolean status) {
+    public Cliente(String nome, String telefone, String cpf, String observacao, boolean status) {
         super(nome, telefone, cpf);
         this.observacao = observacao;
         this.status = status;

@@ -6,10 +6,10 @@ public class Pessoa {
     
     private int id;
     private String nome;
-    private char telefone;
+    private String telefone;
     private Date nascimento;
-    private char cpf;
-    private char rg;
+    private String cpf;
+    private String rg;
     private String estadoCivil;
     private String endereco;
     private Date criadoEm;	
@@ -21,7 +21,7 @@ public class Pessoa {
     }
 
 
-    public Pessoa(String nome, char telefone, char cpf) {
+    public Pessoa(String nome, String telefone, String cpf) {
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -38,12 +38,12 @@ public class Pessoa {
     }
 
 
-    public char getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
 
-    public void setTelefone(char telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -58,22 +58,22 @@ public class Pessoa {
     }
 
 
-    public char getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
 
-    public void setCpf(char cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
 
-    public char getRg() {
+    public String getRg() {
         return rg;
     }
 
 
-    public void setRg(char rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
