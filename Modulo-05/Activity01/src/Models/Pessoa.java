@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Pessoa {
     
+    private int id;
     private String nome;
     private char telefone;
     private Date nascimento;
@@ -134,6 +135,16 @@ public class Pessoa {
 
     public void setAlteradoPor(Funcionario alteradoPor) {
         this.alteradoPor = alteradoPor;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

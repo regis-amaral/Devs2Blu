@@ -1,22 +1,56 @@
 package Controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Models.Funcionario;
 
-public class FuncionarioController {
+public class FuncionarioController extends Controller <Funcionario>{
 
-    public Funcionario recuperarFuncionario(){
+    private List <Funcionario> listaObj;
+
+    public FuncionarioController() {
+        this.listaObj = new ArrayList<Funcionario>();
+    }
+
+    @Override
+    public Funcionario recuperar(int id){
+        for(Funcionario obj : this.listaObj){
+            if(obj.getId() == id){
+                return obj;
+            }
+        }
         return null;
     }
 
-    public void cadastrarFuncionario(Funcionario funcionario){
-
+    @Override
+    public void inserir(Funcionario obj){
+        this.listaObj.add(obj);
     }
 
-    public void atualizarFuncionario(Funcionario funcionario){
-
+    @Override
+    public void atualizar(Funcionario obj){
+        for (int i = 0; i < this.listaObj.size(); i++) {
+            if (this.listaObj.get(i).getId() == obj.getId()) {
+                this.listaObj.set(i, obj);
+                break;
+            }
+        }
     }
 
-    public void removerFuncionario(int funcionario_id){
-
+    @Override
+    public void remover(Funcionario obj){
+        for(Funcionario p : this.listaObj){
+            if(p.getId() == obj.getId()){
+                this.listaObj.remove(obj);
+            }
+        }
     }
+
+    @Override
+    public List<Funcionario> pegarLista() {
+        return this.listaObj;
+    }
+
+
 }

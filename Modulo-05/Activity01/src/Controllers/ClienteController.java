@@ -1,22 +1,56 @@
 package Controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Models.Cliente;
+import dao.ListasDados;
 
-public class ClienteController {
+public class ClienteController extends Controller <Cliente>{
 
-    public Cliente recuperarCliente(){
+    private List <Cliente> listaObj;
+
+    public ClienteController() {
+        this.listaObj = ListasDados.getInstance().getListaClientes();
+    }
+
+    @Override
+    public Cliente recuperar(int id){
+        for(Cliente obj : this.listaObj){
+            if(obj.getId() == id){
+                return obj;
+            }
+        }
         return null;
     }
 
-    public void cadastrarCliente(Cliente cliente){
-
+    @Override
+    public void inserir(Cliente obj){
+        this.listaObj.add(obj);
     }
 
-    public void atualizarCliente(Cliente cliente){
-
+    @Override
+    public void atualizar(Cliente obj){
+        for (int i = 0; i < this.listaObj.size(); i++) {
+            if (this.listaObj.get(i).getId() == obj.getId()) {
+                this.listaObj.set(i, obj);
+                break;
+            }
+        }
     }
 
-    public void removerCliente(int cliente_id){
-
+    @Override
+    public void remover(Cliente obj){
+        for(Cliente p : this.listaObj){
+            if(p.getId() == obj.getId()){
+                this.listaObj.remove(obj);
+            }
+        }
     }
+
+    @Override
+    public List<Cliente> pegarLista() {
+        return this.listaObj;
+    }
+
 }
