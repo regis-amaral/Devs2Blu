@@ -14,7 +14,7 @@ public class Cadastro extends View{
         String opcao = scanner.nextLine();
         switch(opcao){
             case "1" : CadastroCliente.menu(); break;
-            case "2" : ; break;
+            case "2" : CadastroFuncionario.menu(); break;
             default : System.out.println("Opção inválida!");
         }
     }

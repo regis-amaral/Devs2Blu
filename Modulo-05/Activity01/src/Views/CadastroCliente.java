@@ -1,6 +1,7 @@
 package Views;
 
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Controllers.ClienteController;
@@ -17,7 +18,7 @@ public class CadastroCliente extends View {
                     "1 - Cadastrar Cliente\n" +
                     "2 - Alterar Cliente\n" +
                     "3 - Listar Clientes Cadastrados\n" +
-                    "4 - Visualisar Cliente\n" +
+                    "4 - Visualizar Cliente\n" +
                     "x - Voltar\n" + RESET);
             scanner = new Scanner(System.in);
             String opcao = scanner.nextLine();
@@ -66,8 +67,10 @@ public class CadastroCliente extends View {
             System.out.println("Cliente inserido com sucesso!\n");
             System.out.println("Pressione enter para continuar...");
             scanner.nextLine();
+        } catch(InputMismatchException e){
+            System.out.println(e.getMessage());
         } catch (Exception e) {
-            System.out.println("Dado informado inválido!\nCadastro não finalizado...");
+            System.out.println("Um erro ocorreu!\nCadastro não finalizado...");
         }
     }
 

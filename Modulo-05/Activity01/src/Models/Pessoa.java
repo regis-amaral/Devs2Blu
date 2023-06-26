@@ -20,13 +20,27 @@ public class Pessoa {
     public Pessoa() {
     }
 
-
     public Pessoa(String nome, String telefone, String cpf) {
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
     }
 
+    public Pessoa(int id, String nome, String telefone, String cpf) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.cpf = cpf;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public String getNome() {
         return nome;
@@ -136,16 +150,5 @@ public class Pessoa {
     public void setAlteradoPor(Funcionario alteradoPor) {
         this.alteradoPor = alteradoPor;
     }
-
-
-    public int getId() {
-        return id;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
     
 }

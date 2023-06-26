@@ -3,20 +3,29 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import Models.Cargo;
 import Models.Cliente;
 import Models.Funcionario;
+import dao.dados.GerarCargos;
+import dao.dados.GerarClientes;
+import dao.dados.GerarFuncionarios;
 
+/**
+ * Padrão Singleton
+ */
 public class ListasDados {
 
     private static ListasDados instancia;
 
     private List<Cliente> listaClientes;
     private List<Funcionario> listaFuncionarios;
+    private List<Cargo> listaCargos;
 
 
     private ListasDados() {
-        listaClientes = new ArrayList<Cliente>();
-        listaFuncionarios = new ArrayList<Funcionario>();
+        listaCargos = GerarCargos.pegaLista();
+        listaClientes = GerarClientes.pegaLista();
+        listaFuncionarios = GerarFuncionarios.pegaLista();
     }
 
     public static ListasDados getInstance() {
@@ -30,7 +39,7 @@ public class ListasDados {
         return listaClientes;
     }
 
-    public List<Funcionario> getListaFcuncionarios() {
+    public List<Funcionario> getListaFuncionarios() {
         return listaFuncionarios;
     }
 }

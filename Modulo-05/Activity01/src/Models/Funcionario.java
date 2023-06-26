@@ -4,12 +4,13 @@ import java.util.Date;
 
 public class Funcionario extends Pessoa {
     private String escolaridade;
-    private String cargo;
+    private Cargo cargo;
     private String ctps;
     private Date dataAdmissao;
     private Date dataDemissao;
     private boolean disponibilidade;
     private boolean status;
+    private String senha;
     private Date criadoEm;
     private Funcionario criadoPor;
     private Date alteradoEm;
@@ -19,12 +20,17 @@ public class Funcionario extends Pessoa {
         super(nome, telefone, cpf);
     }
 
-    public Funcionario(String nome, String telefone, String cpf, String escolaridade, String cargo, String ctps, Date dataAdmissao) {
-        super(nome, telefone, cpf);
+    public Funcionario(int id, String nome, String telefone, String cpf) {
+        super(id, nome, telefone, cpf);
+    }
+
+    public Funcionario(int id, String nome, String telefone, String cpf, String escolaridade, String ctps, Date dataAdmissao, Cargo cargo) {
+        super(id, nome, telefone, cpf);
         this.escolaridade = escolaridade;
         this.cargo = cargo;
         this.ctps = ctps;
         this.dataAdmissao = dataAdmissao;
+        this.cargo = cargo;
     }
 
     public String getEscolaridade() {
@@ -35,11 +41,11 @@ public class Funcionario extends Pessoa {
         this.escolaridade = escolaridade;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 
