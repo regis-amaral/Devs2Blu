@@ -15,11 +15,11 @@ public class Funcionario extends Pessoa {
     private Date alteradoEm;
     private Funcionario alteradoPor;
     
-    public Funcionario(String nome, char telefone, char cpf) {
+    public Funcionario(String nome, String telefone, String cpf) {
         super(nome, telefone, cpf);
     }
 
-    public Funcionario(String nome, char telefone, char cpf, String escolaridade, String cargo, String ctps, Date dataAdmissao) {
+    public Funcionario(String nome, String telefone, String cpf, String escolaridade, String cargo, String ctps, Date dataAdmissao) {
         super(nome, telefone, cpf);
         this.escolaridade = escolaridade;
         this.cargo = cargo;

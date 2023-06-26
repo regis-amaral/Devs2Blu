@@ -23,21 +23,26 @@ public class App {
         menu();
     }
 
-    private static void menu(){
+    private static void menu() {
         Scanner scanner;
         scanner = new Scanner(System.in);
         boolean exec = true;
-        while(exec){
+        while (exec) {
             System.out.println(VERDE + "#########################################\n" +
-            "Escolha a opção desejada:\n"+
-            "1 - Cadastro\n" +
-            "x - Encerrar Programa\n" +
-            "#########################################\n" + RESET);
+                    "Escolha a opção desejada:\n" +
+                    "1 - Cadastro\n" +
+                    "x - Encerrar Programa\n" +
+                    "#########################################\n" + RESET);
             String opcao = scanner.nextLine();
-            switch(opcao){
-                case "1" : Cadastro.menu(); break;
-                case "x" : exec = false; break;
-                default : System.out.println("Opção inválida!");
+            switch (opcao) {
+                case "1":
+                    Cadastro.menu();
+                    break;
+                case "x":
+                    exec = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
             }
         }
         System.out.println("Programa encerrando...");

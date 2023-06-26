@@ -1,6 +1,5 @@
 package Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import Models.Cliente;
@@ -53,4 +52,12 @@ public class ClienteController extends Controller <Cliente>{
         return this.listaObj;
     }
 
+    public Cliente buscaClientePorCpf(String cpf){
+        for(Cliente p : this.listaObj){
+            if(p.getCpf().equals(cpf)){
+                return p;
+            }
+        }
+        return null;
+    }
 }
